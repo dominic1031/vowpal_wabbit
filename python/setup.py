@@ -26,7 +26,7 @@ def find_boost():
         # use version suffix if present
         boost_lib = 'boost_python-py{v[0]}{v[1]}'.format(v=sys.version_info)
         if not find_library(boost_lib):
-            boost_lib = "boost_python"
+            boost_lib = "'boost_python{v[0]}'"
     elif system == 'Darwin':
         boost_lib = 'boost_python-mt' if sys.version_info[0] == 2 else 'boost_python3-mt'
     elif system == 'Cygwin':
